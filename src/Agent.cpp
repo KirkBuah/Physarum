@@ -7,7 +7,7 @@ agent::agent() :
     sensor_width(1),
     step_size(1),
     dep_t(5),
-    p_random_direction(0),
+    p_random_direction(0.0),
     s_min(0)
 {
     // starting values
@@ -100,6 +100,8 @@ void agent::rotate(const float angle) {
 }
 
 void agent::next_position(float &_x, float &_y) {
+    // possibility of random new direction
+    if(ofRandom(1) > 1-p_random_direction) new_direction();
     float next_x = x + step_size * std::cos(direction);
     float next_y = y + step_size * std::sin(direction);
     _x = next_x;

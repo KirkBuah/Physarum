@@ -9,6 +9,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     data_map.cycle(trail_map);
+    trail_map.diffuse();
     trail_map.decay();
 }
 

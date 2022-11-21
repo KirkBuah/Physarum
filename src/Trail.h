@@ -4,12 +4,12 @@
 
 class trailmap{
 public:
-    void setup(int _width, int _height, bool random);
-    void diffuse();
+    void setup(int _width, int _height, bool random);           // generate trail map
+    void diffuse();                               // diffuse trail map using a 3x3 gaussian kernel
     void decay();
     void draw();
-    void set(const float x, const float y, const int value);
-    float get_trail(const float x, const float y);    // get trail map value given x and y coordinates
+    void set(const float x, const float y, const int value);    // set trail map value
+    float get_trail(const float x, const float y);              // get trail map value given x and y coordinates
     void delete_trail(float x, float y, float radius);
     trailmap();
 private:
