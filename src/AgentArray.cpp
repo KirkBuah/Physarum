@@ -47,7 +47,7 @@ void agentarray::draw(bool debug = false) {
     for(int i = 0; i < length; i++) {
         int x = array[i]->get_x();
         int y = array[i]->get_y();
-        ofSetColor(255,0,0);
+        ofSetColor(255,255,255);
         ofDrawRectangle(x,y,1,1 );
         if (debug) {
             ofSetColor(0,0,0);

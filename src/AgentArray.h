@@ -12,6 +12,7 @@ public:
     void draw(bool debug);                                                   // draw agents on screen, if debug = true draw sensors too
 
     agentarray();
+
 private:
     std::vector<agent*> array;
     int width;

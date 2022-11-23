@@ -15,9 +15,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofSetBackgroundColor(255, 255, 255);
-    trail_map.draw(); // drawn blue
-    data_map.draw(false); // drawn red
+    ofSetBackgroundColor(0, 0, 0);
+    //trail_map.draw();
+    data_map.draw(false);
 }
 
 //--------------------------------------------------------------
@@ -37,7 +37,7 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-    trail_map.delete_trail((float)x, (float)y, 30);
+    trail_map.add_nugget((float)x, (float)y, 10, 200);
 }
 
 //--------------------------------------------------------------

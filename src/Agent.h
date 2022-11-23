@@ -4,24 +4,24 @@
 #include "Trail.h"
 class agent{
 public:
-    int sense(trailmap trail_map);          // sense chemoattractant, input from trail_map and return -1,0,1 for rotate left,straight,right
-    void rotate(const int where);           // rotate according to output from sense()
-    void rotate(const float angle);         // rotate according to angle within range [0,2*PI)
-    void next_position(float &x, float &y); // writes on variables x and y the next position of the agent
-    void move();                            // move agent to next position
-    void deposit(trailmap trail_map);       // deposit chemoattractant after moving
+    int sense(trailmap trail_map);                // sense chemoattractant, input from trail_map and return -1,0,1 for rotate left,straight,right
+    void rotate(const int where);                 // rotate according to output from sense()
+    void rotate(const float angle);               // rotate according to angle within range [0,2*PI)
+    void next_position(float &x, float &y);       // writes on variables x and y the next position of the agent
+    void move();                                  // move agent to next position
+    void deposit(trailmap trail_map);             // deposit chemoattractant after moving
 
     // getters
-    float get_x();
-    float get_y();
-    void get_FL(const int which, float &x, float&y);   // get sensor coordinates, which takes -1 for FL, 0 for F, 1 for FR
-    float get_step_size();
-    float get_direction();
+    float get_x();                                      // return x coordinate
+    float get_y();                                      // return y coordinate
+    float get_step_size();                              // return the agent step size
+    float get_direction();                              // return the direction the agent is pointing towards (0,2PI)
+    void get_FL(const int which, float &x, float&y);    // get sensor coordinates, which takes -1 for FL, 0 for F, 1 for FR
 
     // setters
-    void set_x(float _x);
-    void set_y(float _y);
-    void new_direction();
+    void set_x(const float _x);                         // set x coordinate to a float in range (0, width)
+    void set_y(const float _y);                         // set y coordinate to a float in range (0,height)
+    void new_direction();                               // assign a random new direction to the agent
 
     agent();
 private:
