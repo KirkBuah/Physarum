@@ -2,7 +2,7 @@
 
 Physarum is a simulation of the transport network mechanisms shown by the *Physarum Polycephalum* slime mold built using C++ and [openFrameworks](https://openframeworks.cc/).
 
-![image]([https://imgur.com/a/rqCPqEi](https://i.imgur.com/sbpVXv4.jpeg))
+![image](https://i.imgur.com/sbpVXv4.jpeg)
 
 I decided to pursue this project after reaading [this paper](https://uwe-repository.worktribe.com/output/980579) and seeing how such complex behaviours arise from a simple rule followed by every particle in the simulation.
 
