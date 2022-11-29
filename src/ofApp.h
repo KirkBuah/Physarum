@@ -1,9 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Agent.h"
-#include "Trail.h"
-#include "AgentArray.h"
+#include "agent.h"
+#include "trailmap.h"
+#include "datamap.h"
 
 
 
@@ -28,5 +28,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		trailmap trail_map;
-        agentarray data_map;
+        datamap data_map;
 };

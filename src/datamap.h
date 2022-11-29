@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Agent.h"
-#include "Trail.h"
+#include "agent.h"
+#include "trailmap.h"
 #include"ofMain.h"
 
-class agentarray{
+class datamap{
 public:
     void setup(int _width, int _height, float population_percentage);
     void setup(int _width, int _height, int agents);
@@ -12,7 +12,7 @@ public:
     void cycle(const trailmap trail_map);                                    // cycle scene, takes as input the trail map
     void draw(bool debug);                                                   // draw agents on screen, if debug = true draw sensors too
 
-    agentarray();
+    datamap();
 
 private:
     std::vector<agent*> array;

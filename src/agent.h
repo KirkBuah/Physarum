@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Trail.h"
+#include "trailmap.h"
 class agent{
 public:
     int sense(trailmap trail_map);                          // sense chemoattractant, input from trail_map and return -1,0,1 for rotate left,straight,right

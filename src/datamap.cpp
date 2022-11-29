@@ -1,10 +1,10 @@
 #include "ofApp.h"
 
-agentarray::agentarray() {
+datamap::datamap() {
 
 }
 
-void agentarray::setup(int _width, int _height, float population_percentage) {
+void datamap::setup(int _width, int _height, float population_percentage) {
 
     width = _width;
     height = _height;
@@ -18,7 +18,7 @@ void agentarray::setup(int _width, int _height, float population_percentage) {
     }
 }
 
-void agentarray::setup(int _width, int _height, int agents) {
+void datamap::setup(int _width, int _height, int agents) {
 
     width = _width;
     height = _height;
@@ -29,7 +29,7 @@ void agentarray::setup(int _width, int _height, int agents) {
     }
 }
 
-void agentarray::cycle(const trailmap trail_map) {
+void datamap::cycle(const trailmap trail_map) {
     // randomly cycle through the array to avoid any bias due to sequential ordering
     //std::random_shuffle(array.begin(), array.end());
     for(int i = 0; i < length; i++) {
@@ -43,13 +43,13 @@ void agentarray::cycle(const trailmap trail_map) {
     }
 }
 
-void agentarray::encircle(float r_min, float r_max, float angle) {
+void datamap::encircle(float r_min, float r_max, float angle) {
     for(int i = 0; i < length; i++) {
         array[i]->encircle(r_min, r_max, angle);
     }
 }
 
-void agentarray::draw(bool debug = false) {
+void datamap::draw(bool debug = false) {
     for(int i = 0; i < length; i++) {
         int x = array[i]->get_x();
         int y = array[i]->get_y();
