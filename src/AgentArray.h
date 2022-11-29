@@ -8,6 +8,7 @@ class agentarray{
 public:
     void setup(int _width, int _height, float population_percentage);
     void setup(int _width, int _height, int agents);
+    void encircle(float r_min, float r_max, float angle);                    // encircle agents
     void cycle(const trailmap trail_map);                                    // cycle scene, takes as input the trail map
     void draw(bool debug);                                                   // draw agents on screen, if debug = true draw sensors too
 

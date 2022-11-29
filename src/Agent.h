@@ -4,13 +4,15 @@
 #include "Trail.h"
 class agent{
 public:
-    int sense(trailmap trail_map);                // sense chemoattractant, input from trail_map and return -1,0,1 for rotate left,straight,right
-    void rotate(const int where);                 // rotate according to output from sense()
-    void rotate(const float angle);               // rotate according to angle within range [0,2*PI)
-    void next_position(float &x, float &y);       // writes on variables x and y the next position of the agent
-    void move();                                  // move agent to next position
-    void deposit(trailmap trail_map);             // deposit chemoattractant after moving
-
+    int sense(trailmap trail_map);                          // sense chemoattractant, input from trail_map and return -1,0,1 for rotate left,straight,right
+    void rotate(const int where);                           // rotate according to output from sense()
+    void rotate(const float angle);                         // rotate according to angle within range [0,2*PI)
+    void next_position(float &x, float &y);                 // writes on variables x and y the next position of the agent
+    void move();                                            // move agent to next position
+    void deposit(trailmap trail_map);                       // deposit chemoattractant after moving
+    void encircle(float r_min, float r_max, float angle);   // places the agent on a random position on a circle centered in the center of the scene,
+                                                            // with radius r_min and thickness r_max - r_min. Angle is the radial direction of the agent
+                                                            // with 0 degrees pointing directly outwards
     // getters
     float get_x();                                      // return x coordinate
     float get_y();                                      // return y coordinate

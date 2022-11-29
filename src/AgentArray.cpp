@@ -43,6 +43,12 @@ void agentarray::cycle(const trailmap trail_map) {
     }
 }
 
+void agentarray::encircle(float r_min, float r_max, float angle) {
+    for(int i = 0; i < length; i++) {
+        array[i]->encircle(r_min, r_max, angle);
+    }
+}
+
 void agentarray::draw(bool debug = false) {
     for(int i = 0; i < length; i++) {
         int x = array[i]->get_x();

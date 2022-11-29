@@ -4,6 +4,7 @@
 void ofApp::setup(){
     trail_map.setup(ofGetWidth(), ofGetHeight(), true);
     data_map.setup(ofGetWidth(), ofGetHeight(), (float)0.15);
+    data_map.encircle(100,150,PI/4);
 }
 
 //--------------------------------------------------------------

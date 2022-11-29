@@ -112,6 +112,37 @@ void agent::deposit(trailmap trail_map) {
     trail_map.set(x, y, dep_t);
 }
 
+void agent::encircle(float r_min, float r_max, float angle) {
+    // get center of the scene
+    float width = (float)ofGetWidth();
+    float height = (float)ofGetHeight();
+    float center_x = width/2;
+    float center_y = height/2;
+
+    // get random position on circle of radius r_max and thickness r_max - r_min
+    // the clever approach would be to find a function y(x) that given r_min , r_max, center_x, center_y and x
+    // that, given a random x in a valid range, returns a random y such that (x,y) is in the circle
+
+    // here i use the dumb approach of generating points at random and keeping only those which are in the correct spot
+    // this should not impact performance too much since this function should be called only once per agent in ofApp::setup()
+    while (true) {
+        float rand_x = ofRandom(width);
+        float rand_y = ofRandom(height);
+        // check if point is valid
+        if (
+            std::pow(rand_x - center_x, 2) + std::pow(rand_y - center_y, 2) < std::pow(r_max, 2) &&
+            std::pow(rand_x - center_x, 2) + std::pow(rand_y - center_y, 2) > std::pow(r_min, 2)
+           ) {
+            // set agent position
+            x = rand_x;
+            y = rand_y;
+            // set agent angle according to position
+            direction = std::atan((y - center_y)/(x - center_x)) + angle;
+            return;
+        }
+    }
+}
+
 float agent::get_x() {
     return x;
 }
